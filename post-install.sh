@@ -38,7 +38,7 @@ sudo pacman -S nvidia-open-dkms nvidia-settings nvidia-utils lib32-nvidia-utils 
 sudo nvim /etc/mkinitcpio.conf 
 sudo mkinitcpio -P 
 
-sudo echo "options nvidia_drm modeset=1 fbdev=1" > /etc/modprobe.d/nvidia.conf
+echo "options nvidia_drm modeset=1 fbdev=1" |sudo tee /etc/modprobe.d/nvidia.conf
   
 yay -S nerd-fonts 
 pacman -S blender godot steam
