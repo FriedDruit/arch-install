@@ -8,13 +8,14 @@ sudo pkgfile --update
 
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils
 
-cd
-mkdir opt
-cd opt
+mkdir -p /home/solid/opt
+cd /home/solid/opt
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+cd
 
 yay -S zramd
 sudo systemctl enable --now zramd.service
