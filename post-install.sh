@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER="solid"
+USER=""
 
 sudo nvim /etc/pacman.conf
 sudo pacman updatedb
@@ -8,8 +8,8 @@ sudo pkgfile --update
 
 sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils
 
-mkdir -p /home/solid/opt
-cd /home/solid/opt
+mkdir -p /home/$USER/opt
+cd /home/$USER/opt
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -44,7 +44,7 @@ sudo mkinitcpio -P
 echo "options nvidia_drm modeset=1 fbdev=1" |sudo tee /etc/modprobe.d/nvidia.conf
   
 yay -S nerd-fonts 
-pacman -S blender godot steam
+#pacman -S blender godot steam
 
 mkdir /home/$USER/.config/{bspwm,sxhkd}
 
